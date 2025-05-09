@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>畅想机器编程 - 给孩子的第一堂编程课</title>
+    <link href="https://lf6-cdn-tos.bytecdntp.com/cdn/expire-100-M/font-awesome/6.0.0/css/all.min.css"  rel="stylesheet">
+    <link href="https://s2.ssl.qhres2.com/static/56662140ef7d5d03.css"  rel="stylesheet">
+    <style>
+        :root {
+            --primary: #3B82F6;
+            --secondary: #10B981;
+            --light: #F9FAFB;
+            --dark: #1F2937;
+            --gray: #6B7280;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        header {
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+        
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            padding: 4rem 0;
+        }
+        
+        .section {
+            margin-bottom: 4rem;
+        }
+        
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50%;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .card-title i {
+            margin-right: 0.75rem;
+            font-size: 1.5rem;
+        }
+        
+        .highlight {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .age-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+        
+        .age-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .age-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .age-content p {
+            color: var(--gray);
+        }
+        
+        .benefit {
+            display: flex;
+            margin-bottom: 1.5rem;
+        }
+        
+        .benefit-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .benefit-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            color: var(--dark);
+        }
+        
+        .benefit-content p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-text {
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>畅想机器人编程小课堂</h1>
+            <p class="subtitle">用最简单有趣的方式，带孩子走进编程的奇妙世界</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">为什么孩子要学编程？</h2>
+                <div class="card">
+                    <p>亲爱的家长朋友们，编程就像学习一种新的<span class="highlight">超级语言</span>，它能让孩子和电脑、机器人对话，创造出属于自己的数字世界！</p>
+                    <p>在21世纪，编程不再只是程序员的专属技能，它正在成为像阅读、写作一样的基础能力。学习编程能帮助孩子培养<span class="highlight">逻辑思维</span>、<span class="highlight">创造力</span>和<span class="highlight">解决问题的能力</span>，这些都是未来世界的重要技能！</p>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">不同年龄段学什么？</h2>
+                <div class="grid">
+                    <div class="card">
+                        <div class="age-group">
+                            <div class="age-icon">5-7</div>
+                            <div class="age-content">
+                                <h3>启蒙阶段</h3>
+                                <p>用积木式编程培养兴趣</p>
+                            </div>
+                        </div>
+                        <p>这个年龄段的孩子可以尝试<span class="highlight">Scratch Jr</span>或<span class="highlight">乐高编程</span>，就像搭积木一样简单有趣！通过拖拽彩色积木块，孩子就能让角色动起来，培养对编程的兴趣。</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="age-group">
+                            <div class="age-icon">8-12</div>
+                            <div class="age-content">
+                                <h3>基础阶段</h3>
+                                <p>开始学习真正的编程概念</p>
+                            </div>
+                        </div>
+                        <p>孩子可以学习<span class="highlight">Scratch</span>或简单的<span class="highlight">Python</span>，制作小游戏和动画。我们会用孩子能理解的方式讲解变量、循环等概念，就像教他们玩一个新游戏！</p>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="age-group">
+                            <div class="age-icon">13+</div>
+                            <div class="age-content">
+                                <h3>进阶阶段</h3>
+                                <p>深入编程思维训练</p>
+                            </div>
+                        </div>
+                        <p>可以学习更复杂的<span class="highlight">Python</span>、<span class="highlight">JavaScript</span>或<span class="highlight">C++</span>，制作实用的小程序。我们会引导孩子像工程师一样思考，解决实际问题。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">编程能给孩子带来什么？</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-brain"></i>思维训练</h3>
+                        <p>编程就像玩解谜游戏，需要把大问题分解成小步骤，培养孩子的<span class="highlight">逻辑思维</span>和<span class="highlight">系统性思考</span>能力。</p>
+                        <div class="benefit">
+                            <div class="benefit-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="benefit-content">
+                                <h4>分解问题</h4>
+                                <p>学会把复杂任务拆解成简单步骤</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon"><i class="fas fa-project-diagram"></i></div>
+                            <div class="benefit-content">
+                                <h4>模式识别</h4>
+                                <p>发现重复规律，提高效率</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-lightbulb"></i>创造力激发</h3>
+                        <p>编程是数字时代的乐高，孩子可以用代码<span class="highlight">创造游戏</span>、<span class="highlight">动画</span>和<span class="highlight">故事</span>，把想象力变成现实！</p>
+                        <div class="benefit">
+                            <div class="benefit-icon"><i class="fas fa-gamepad"></i></div>
+                            <div class="benefit-content">
+                                <h4>游戏设计</h4>
+                                <p>设计自己的小游戏，成为小小创作者</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon"><i class="fas fa-paint-brush"></i></div>
+                            <div class="benefit-content">
+                                <h4>数字艺术</h4>
+                                <p>用代码绘制图案，创作数字画作</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="card-title"><i class="fas fa-graduation-cap"></i>学习能力</h3>
+                        <p>编程教会孩子<span class="highlight">如何学习</span>，培养<span class="highlight">耐心</span>和<span class="highlight">抗挫折能力</span>，这些技能对学校学习也很有帮助。</p>
+                        <div class="benefit">
+                            <div class="benefit-icon"><i class="fas fa-search"></i></div>
+                            <div class="benefit-content">
+                                <h4>调试思维</h4>
+                                <p>学会查找和修复错误，不轻易放弃</p>
+                            </div>
+                        </div>
+                        <div class="benefit">
+                            <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                            <div class="benefit-content">
+                                <h4>团队协作</h4>
+                                <p>和小伙伴一起完成编程项目</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">如何开始？</h2>
+                <div class="card">
+                    <h3 class="card-title"><i class="fas fa-rocket"></i>给家长的建议</h3>
+                    <p>1. <span class="highlight">从兴趣出发</span>：先让孩子尝试简单的编程游戏或工具，激发兴趣</p>
+                    <p>2. <span class="highlight">陪伴学习</span>：和孩子一起探索，不要把它变成另一个学习任务</p>
+                    <p>3. <span class="highlight">鼓励创造</span>：多表扬孩子的作品，而不是追求完美</p>
+                    <p>4. <span class="highlight">适度安排</span>：平衡编程学习和其他活动，保持新鲜感</p>
+                    <p>记住，我们的目标是培养孩子的<span class="highlight">计算思维</span>和<span class="highlight">创造力</span>，而不是培养专业程序员！</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p class="footer-text">畅想机器人编程小课堂 · 让每个孩子都能享受创造的乐趣</p>
+            <p class="footer-text">© 2025 儿童编程教育研究中心</p>
+        </div>
+    </footer>
+</body>
+</html>
